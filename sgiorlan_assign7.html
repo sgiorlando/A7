@@ -1,0 +1,60 @@
+<!--
+    FILE: /~sgiorlan/sgiorlan_assign7.html
+    91.61 GUI Programming I Assignment No.7: Using the jQuery Validation Plugin with Your Dynamic Table
+    Scott T. Giorlando, UMass Lowell Computer Science, scott_giorlando@student.uml.edu
+    File Created on: 11/29/2019 3:20 PM.
+        Updated by STG on 11/29/2019 7:26 PM
+
+    File Description: This file is a webpage that shows the user a form where they can enter
+    a range of numbers.  Once they enter the numbers a multiplication table is created from the beginning
+    of their range to the end of their range specified.  This table is also limited in range, and does not allow
+    the user to enter any type of letters or symbols that are not represented as letters.
+
+    This file did pass all the validators that need to be used.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Interactive Multiplication Table</title>
+    <link href="css/hw7stylesheet.css" rel="stylesheet">
+  </head>
+  <body>
+    <!--
+      In this div I have a form that will take in user input which is a starting number and an ending number for two separte inputs,
+      a multiplier and a multiplicand.
+
+      I included CDN's for jQuery for both the regular jQuery and the validation plugin.
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+    <div id = "userInput">
+        <h1 id = "header">Interactive Multiplication Table</h1>
+        <form id = "userForm" name="userForm">
+          <label for="firstMultiplier">Starting Number (Multiplier)</label>
+          <input type ="number" name = "firstMultiplier" id = "firstMultiplier" placeholder="Please enter any non-negative integer (Set limit is 100)">
+
+          <label for="lastMultiplier">Ending Number (Multiplier)</label>
+          <input type ="number" name = "lastMultiplier" id = "lastMultiplier" placeholder="Please enter any integer larger than your first integer (Set limit is 100)">
+
+          <label for="firstMultiplicand">Starting Number (Multiplicand)</label>
+          <input type ="number" name = "firstMultiplicand" id = "firstMultiplicand" placeholder="Please enter any non-negative integer (Set limit is 100)">
+
+          <label for="lastMultiplicand">Ending Number (Multiplicand)</label>
+          <input type ="number" name = "lastMultiplicand" id = "lastMultiplicand" placeholder="Please enter any integer larger than your first integer (Set limit is 100)">
+
+          <input type = "submit" value="Submit Numbers">
+          <div id = "userSubmission">
+          </div>
+        </form>
+    </div>
+    <div id = "tableOutput">
+      <table id = tOutput>
+      </table>
+    </div>
+    <!--
+    This calls my script file hw7script.js
+  -->
+   <script src="js/hw7script.js"></script>
+  </body>
+</html>
